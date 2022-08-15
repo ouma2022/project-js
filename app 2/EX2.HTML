@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+        <div class="login-page"></div>
+            <div class="form"></div>
+            <div class="container" style="top: 80px; margin:5%";>
+                <form>
+                    <div>
+                        <label for="Username"></label>
+                      <input autocomplete="off" type="Username" placeholder="Username" id="Username" />
+                      <span id="emailError"></span>
+                    </div>
+                    <div>
+                      <label for="password" placeholder="password"></label>
+                      <input type="password" placeholder="password" id="password"/>
+                      <span id="passwordError"></span>
+                    </div>
+                    <div>
+                        <label for="Confirmpassword"></label>
+                        <input type="Confirmpassword" placeholder="Confirm Password" id="Confirmpassword"/>
+                        <span id="ConfirmPasswordError"></span>
+                      </div>
+                
+                      
+                        <div>
+                            <button onclick="submit()" id="pop">register
+                            </button>
+                          </div>
+                          <div id="submit"></div>
+                    </div>
+                </div>
+                    
+                  </form>
+<script language="javascript" type="text/javascript">
+document.querySelectorAll('form input').forEach(function(field) {
+	var fieldId = field.getAttribute('id');
+  var submit = '';
+  
+  switch(fieldId) {
+    case 'Username':
+    submit = 'enter your username'
+      break;
+    case 'password':
+    submit = 'enter your password';
+      break;
+      case 'Confirmpassword':
+      submit = 'enter your Confirm Password';
+      break;
+  }
+  
+	field.addEventListener('focus', function() {
+  	document.getElementById('submit').innerText =submit;
+  })
+  
+  field.addEventListener('blur', function() {
+  	document.getElementById('submit').innerText = '';
+  })
+})
+                // Q:3//
+const submitButton = document.getElementById("submit");
+const input = document.getElementById("Username");
+
+    input.addEventListener("keyup", (e) =>{
+        const value = e.currentTarget . value;
+        submitButton.disabled = false;
+
+        if (value==""){
+            submitButton.disabled=true;
+        }
+    })
+    
+      // Q : 5//
+
+    function submit(){
+       swal("good job!","you clicked the button!","success");
+    }
+
+</script>
+</script>
+</body>
+</html>
